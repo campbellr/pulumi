@@ -159,6 +159,7 @@ func NewPulumiCmd() *cobra.Command {
 	cmd.AddCommand(newUpCmd())
 	cmd.AddCommand(newPreviewCmd())
 	cmd.AddCommand(newDestroyCmd())
+	cmd.AddCommand(newWatchCmd())
 	//     - Stack Management Commands:
 	cmd.AddCommand(newStackCmd())
 	cmd.AddCommand(newConfigCmd())

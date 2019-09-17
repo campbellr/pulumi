@@ -669,6 +669,15 @@ func (b *cloudBackend) Destroy(ctx context.Context, stackRef backend.StackRefere
 	return backend.PreviewThenPromptThenExecute(ctx, apitype.DestroyUpdate, stack, op, b.apply)
 }
 
+func (b *cloudBackend) Watch(ctx context.Context, stackRef backend.StackReference,
+	op backend.UpdateOperation) result.Result {
+	_, err := getStack(ctx, b, stackRef)
+	if err != nil {
+		return result.FromError(err)
+	}
+	return result.FromError(fmt.Errorf("not yet implemented"))
+}
+
 func (b *cloudBackend) Query(ctx context.Context, stackRef backend.StackReference,
 	op backend.UpdateOperation) result.Result {
 
